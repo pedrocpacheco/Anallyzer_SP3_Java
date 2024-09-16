@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Visualizar Empresa</title>
+</head>
+
+<body>
+  <h1>Visualizar Empresa</h1>
+  <p><strong>ID:</strong> <span th:text="${empresa.id}"></span></p>
+  <p><strong>Nome:</strong> <span th:text="${empresa.nome}"></span></p>
+  <p><strong>CNPJ:</strong> <span th:text="${empresa.cnpj}"></span></p>
+  <p><strong>Contato:</strong> <span th:text="${empresa.contato}"></span></p>
+  <a href="/empresas">Voltar</a>
+</body>
+
+</html>

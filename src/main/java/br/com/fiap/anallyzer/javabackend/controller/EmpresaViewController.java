@@ -1,19 +1,13 @@
 package br.com.fiap.anallyzer.javabackend.controller;
 
-import java.util.List;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import br.com.fiap.anallyzer.javabackend.dto.EmpresaRequestDTO;
 import br.com.fiap.anallyzer.javabackend.dto.EmpresaResponseDTO;
 import br.com.fiap.anallyzer.javabackend.service.EmpresaService;
-import jakarta.validation.Valid;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/empresas")
@@ -29,27 +23,44 @@ public class EmpresaViewController {
   public String listarTodasEmpresas(Model model) {
     List<EmpresaResponseDTO> empresas = empresaService.listarTodasEmpresas();
     model.addAttribute("empresas", empresas);
-    return "empresas/lista";
+    return "empresas/listar";
   }
 
   @GetMapping("/{id}")
-  public String listarEmpresaPorId(@PathVariable Long id, Model model) {
+  public String visualizarEmpresa(@PathVariable Long id, Model model) {
     EmpresaResponseDTO empresa = empresaService.listarEmpresaPorId(id);
     model.addAttribute("empresa", empresa);
-    return "empresas/detalhes";
+    return "empresas/visualizar";
   }
 
-  @GetMapping("/nova")
-  public String mostrarFormularioEmpresa(Model model) {
-    model.addAttribute("empresa", new EmpresaRequestDTO("", "", ""));
-    return "empresas/formulario";
+  @GetMapping("/novo")
+  public String novaEmpresa(Model model) {
+    model.addAttribute("empresaRequestDTO", new EmpresaRequestDTO("", "", ""));
+    return "empresas/novo";
   }
 
-  @PostMapping
-  public String criarEmpresa(@Valid @ModelAttribute EmpresaRequestDTO empresaRequestDTO, Model model) {
-    // Não é comum redirecionar para a mesma página após POST, mas pode ser
-    // necessário dependendo do fluxo
+  @PostMapping("/novo")
+  public String criarEmpresa(@ModelAttribute EmpresaRequestDTO empresaRequestDTO) {
     empresaService.criarEmpresa(empresaRequestDTO);
+    return "redirect:/empresas";
+  }
+
+  @GetMapping("/editar/{id}")
+  public String editarEmpresa(@PathVariable Long id, Model model) {
+    EmpresaResponseDTO empresa = empresaService.listarEmpresaPorId(id);
+    model.addAttribute("empresa", empresa);
+    return "empresas/editar";
+  }
+
+  @PostMapping("/editar/{id}")
+  public String atualizarEmpresa(@PathVariable Long id, @ModelAttribute EmpresaRequestDTO empresaRequestDTO) {
+    empresaService.atualizarEmpresa(id, empresaRequestDTO);
+    return "redirect:/empresas";
+  }
+
+  @GetMapping("/deletar/{id}")
+  public String deletarEmpresa(@PathVariable Long id) {
+    empresaService.deletarEmpresa(id);
     return "redirect:/empresas";
   }
 }

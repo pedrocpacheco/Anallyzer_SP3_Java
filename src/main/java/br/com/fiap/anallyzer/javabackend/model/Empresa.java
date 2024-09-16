@@ -21,7 +21,6 @@ public class Empresa {
     this.nome = nome;
     this.cnpj = cnpj;
     this.contato = contato;
-    this.campanhas = campanhas;
   }
 
   public Empresa() {
@@ -40,9 +39,6 @@ public class Empresa {
 
   @Column(name = "ctt_empresa")
   private String contato;
-
-  @OneToMany(mappedBy = "empresa")
-  private List<Campanha> campanhas;
 
   public String getNome() {
     return nome;
@@ -74,14 +70,6 @@ public class Empresa {
 
   public void setId(Long id) {
     this.id = id;
-  }
-
-  public List<Campanha> getCampanhas() {
-    return campanhas;
-  }
-
-  public void setCampanhas(List<Campanha> campanhas) {
-    this.campanhas = campanhas;
   }
 
 }

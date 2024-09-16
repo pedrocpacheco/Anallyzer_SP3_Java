@@ -18,7 +18,6 @@ public class Cliente {
     this.escolaridade = escolaridade;
     this.estadoCivil = estadoCivil;
     this.genero = genero;
-    this.campanha = campanha;
   }
 
   @Id
@@ -45,10 +44,6 @@ public class Cliente {
   @Enumerated(EnumType.STRING)
   @Column(name = "genero")
   private Genero genero;
-
-  @ManyToOne
-  @JoinColumn(name = "id_campanha", referencedColumnName = "id_campanha")
-  private Campanha campanha;
 
   public Long getId() {
     return id;
@@ -104,14 +99,6 @@ public class Cliente {
 
   public void setGenero(Genero genero) {
     this.genero = genero;
-  }
-
-  public Campanha getCampanha() {
-    return campanha;
-  }
-
-  public void setCampanha(Campanha campanha) {
-    this.campanha = campanha;
   }
 
 }

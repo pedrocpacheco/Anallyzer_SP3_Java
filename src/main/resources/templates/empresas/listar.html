@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Empresas</title>
+</head>
+
+<body>
+  <h1>Empresas</h1>
+  <a href="/empresas/novo">Nova Empresa</a>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CNPJ</th>
+        <th>Contato</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="empresa : ${empresas}">
+        <td th:text="${empresa.id}"></td>
+        <td th:text="${empresa.nome}"></td>
+        <td th:text="${empresa.cnpj}"></td>
+        <td th:text="${empresa.contato}"></td>
+        <td>
+          <a th:href="@{/empresas/{id}(id=${empresa.id})}">Visualizar</a>
+          <a th:href="@{/empresas/editar/{id}(id=${empresa.id})}">Editar</a>
+          <a th:href="@{/empresas/deletar/{id}(id=${empresa.id})}" onclick="return confirm('Tem certeza?')">Deletar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
