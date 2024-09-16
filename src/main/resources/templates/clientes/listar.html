@@ -2,34 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Clientes</title>
+  <title>Listar Clientes</title>
 </head>
 
 <body>
   <h1>Clientes</h1>
-  <a href="/clientes/novo">Novo Cliente</a>
   <table>
     <thead>
       <tr>
-        <th>ID</th>
         <th>Nome</th>
         <th>Email</th>
+        <th>Escolaridade</th>
+        <th>Estado Civil</th>
+        <th>Gênero</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr th:each="cliente : ${clientes}">
-        <td th:text="${cliente.id}"></td>
         <td th:text="${cliente.nome}"></td>
         <td th:text="${cliente.email}"></td>
+        <td th:text="${cliente.escolaridade.getDescricao()}"></td>
+        <td th:text="${cliente.estadoCivil.getDescricao()}"></td>
+        <td th:text="${cliente.genero.getDescricao()}"></td>
         <td>
-          <a th:href="@{/clientes/{id}(id=${cliente.id})}">Visualizar</a>
+          <a th:href="@{/clientes/visualizar/{id}(id=${cliente.id})}">Visualizar</a>
           <a th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Editar</a>
-          <a th:href="@{/clientes/deletar/{id}(id=${cliente.id})}" onclick="return confirm('Tem certeza?')">Deletar</a>
+          <a th:href="@{/clientes/deletar/{id}(id=${cliente.id})}"
+            onclick="return confirm('Deseja realmente deletar?')">Deletar</a>
         </td>
       </tr>
     </tbody>
   </table>
+  <a href="/clientes/novo">Novo Cliente</a>
 </body>
 
 </html>

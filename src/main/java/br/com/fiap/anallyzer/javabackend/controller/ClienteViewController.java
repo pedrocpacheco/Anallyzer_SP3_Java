@@ -55,6 +55,9 @@ public class ClienteViewController {
   public String editarCliente(@PathVariable Long id, Model model) {
     ClienteResponseDTO cliente = clienteService.listarClientePorId(id);
     model.addAttribute("cliente", cliente);
+    model.addAttribute("escolaridades", Escolaridade.values());
+    model.addAttribute("estadosCivis", EstadoCivil.values());
+    model.addAttribute("generos", Genero.values());
     return "clientes/editar";
   }
 

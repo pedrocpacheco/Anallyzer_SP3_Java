@@ -19,17 +19,19 @@
     <br />
     <label for="escolaridade">Escolaridade:</label>
     <select id="escolaridade" th:field="*{escolaridade}">
-      <!-- Adicione opções aqui -->
+      <option th:each="escolaridade : ${escolaridades}" th:value="${escolaridade}"
+        th:text="${escolaridade.getDescricao()}"></option>
     </select>
     <br />
     <label for="estadoCivil">Estado Civil:</label>
     <select id="estadoCivil" th:field="*{estadoCivil}">
-      <!-- Adicione opções aqui -->
+      <option th:each="estadoCivil : ${estadosCivis}" th:value="${estadoCivil}" th:text="${estadoCivil.getDescricao()}">
+      </option>
     </select>
     <br />
     <label for="genero">Gênero:</label>
     <select id="genero" th:field="*{genero}">
-      <!-- Adicione opções aqui -->
+      <option th:each="genero : ${generos}" th:value="${genero}" th:text="${genero.getDescricao()}"></option>
     </select>
     <br />
     <button type="submit">Salvar</button>
