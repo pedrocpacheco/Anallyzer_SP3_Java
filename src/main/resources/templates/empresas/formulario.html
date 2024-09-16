@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Formulário de Empresa</title>
+</head>
+
+<body>
+  <h1>Formulário de Empresa</h1>
+  <form th:action="@{/empresas}" th:object="${empresa}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" th:field="*{nome}" />
+    <br />
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" th:field="*{cnpj}" />
+    <br />
+    <label for="contato">Contato:</label>
+    <input type="text" th:field="*{contato}" />
+    <br />
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="/empresas">Voltar</a>
+</body>
+
+</html>
+``
