@@ -1,0 +1,247 @@
+{
+  "info": {
+    "name": "JAVA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Empresas",
+      "item": [
+        {
+          "name": "Empresas DELETE",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/empresas/1",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Empresas GET 1",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/empresas/2",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Empresas GET All",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/empresas",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Empresas POST",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/empresas",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Tech Solutions Ltda\",\n  \"cnpj\": \"12345678000190\",\n  \"contato\": \"(11) 98765-4321\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Empresas PUT",
+          "event": [],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/empresas/1",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"FIAP\",\n  \"cnpj\": \"12345678000190\",\n  \"contato\": \"(11) 98765-4321\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Clientes DELETE",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes/1",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Clientes GET 1",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes/1",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Clientes GET All",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Clientes Post",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao.silva@example.com\",\n  \"password\": \"12345678\",\n  \"escolaridade\":  \"MESTRADO\",\n  \"estadoCivil\": \"SOLTEIRO\",\n  \"genero\": \"MASCULINO\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Clientes UPDATE",
+          "event": [],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/clientes/2",
+              "host": [
+                "localhost"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Pedro Pacheco\",\n  \"email\": \"joao.silva@example.com\",\n  \"password\": \"12345678\",\n  \"escolaridade\":  \"SUPERIOR_COMPLETO\",\n  \"estadoCivil\": \"SOLTEIRO\",\n  \"genero\": \"MASCULINO\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "bruno",
+      "event": []
+    }
+  ],
+  "variable": []
+}

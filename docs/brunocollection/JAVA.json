@@ -1,0 +1,263 @@
+{
+  "name": "JAVA",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Empresas",
+      "items": [
+        {
+          "type": "http",
+          "name": "Empresas DELETE",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:8080/api/empresas/1",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Empresas GET 1",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:8080/api/empresas/2",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Empresas GET All",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:8080/api/empresas",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Empresas POST",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:8080/api/empresas",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\": \"Tech Solutions Ltda\",\n  \"cnpj\": \"12345678000190\",\n  \"contato\": \"(11) 98765-4321\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Empresas PUT",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:8080/api/empresas/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\": \"FIAP\",\n  \"cnpj\": \"12345678000190\",\n  \"contato\": \"(11) 98765-4321\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Clientes",
+      "items": [
+        {
+          "type": "http",
+          "name": "Clientes DELETE",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:8080/api/clientes/1",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Clientes GET 1",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:8080/api/clientes/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Clientes GET All",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:8080/api/clientes",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Clientes Post",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:8080/api/clientes",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao.silva@example.com\",\n  \"password\": \"12345678\",\n  \"escolaridade\":  \"MESTRADO\",\n  \"estadoCivil\": \"SOLTEIRO\",\n  \"genero\": \"MASCULINO\"\n}\n",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Clientes UPDATE",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:8080/api/clientes/2",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\": \"Pedro Pacheco\",\n  \"email\": \"joao.silva@example.com\",\n  \"password\": \"12345678\",\n  \"escolaridade\":  \"SUPERIOR_COMPLETO\",\n  \"estadoCivil\": \"SOLTEIRO\",\n  \"genero\": \"MASCULINO\"\n}\n",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "JAVA",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
