@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.fiap.anallyzer.javabackend.dto.ClienteRequestDTO;
 import br.com.fiap.anallyzer.javabackend.dto.ClienteResponseDTO;
-import br.com.fiap.anallyzer.javabackend.dto.EmpresaResponseDTO;
 import br.com.fiap.anallyzer.javabackend.model.Escolaridade;
 import br.com.fiap.anallyzer.javabackend.model.EstadoCivil;
 import br.com.fiap.anallyzer.javabackend.model.Genero;

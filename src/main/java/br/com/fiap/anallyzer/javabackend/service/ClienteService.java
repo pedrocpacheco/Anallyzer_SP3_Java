@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.aspectj.apache.bcel.generic.RET;
 import org.springframework.stereotype.Service;
 
 import br.com.fiap.anallyzer.javabackend.dto.ClienteRequestDTO;
