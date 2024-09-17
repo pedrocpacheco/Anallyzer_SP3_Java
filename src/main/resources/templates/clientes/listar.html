@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Listar Clientes</title>
+  <title>Clientes</title>
 </head>
 
 <body>
@@ -20,6 +20,7 @@
     </thead>
     <tbody>
       <tr th:each="cliente : ${clientes}">
+        <td th:text="${cliente.id}"></td>
         <td th:text="${cliente.nome}"></td>
         <td th:text="${cliente.email}"></td>
         <td th:text="${cliente.escolaridade.getDescricao()}"></td>

@@ -7,11 +7,13 @@
 
 <body>
   <h1>Visualizar Cliente</h1>
-  <p><strong>Nome:</strong> <span th:text="${cliente.nome}"></span></p>
-  <p><strong>Email:</strong> <span th:text="${cliente.email}"></span></p>
-  <p><strong>Escolaridade:</strong> <span th:text="${cliente.escolaridade.getDescricao()}"></span></p>
-  <p><strong>Estado Civil:</strong> <span th:text="${cliente.estadoCivil.getDescricao()}"></span></p>
-  <p><strong>Gênero:</strong> <span th:text="${cliente.genero.getDescricao()}"></span></p>
+  <div>
+    <p><strong>Nome:</strong> <span th:text="${cliente.nome}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${cliente.email}"></span></p>
+    <p><strong>Escolaridade:</strong> <span th:text="${cliente.escolaridade.descricao}"></span></p>
+    <p><strong>Estado Civil:</strong> <span th:text="${cliente.estadoCivil.descricao}"></span></p>
+    <p><strong>Gênero:</strong> <span th:text="${cliente.genero.descricao}"></span></p>
+  </div>
   <a href="/clientes">Voltar</a>
 </body>
 

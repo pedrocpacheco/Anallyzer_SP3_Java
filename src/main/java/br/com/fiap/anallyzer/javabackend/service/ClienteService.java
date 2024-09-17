@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.aspectj.apache.bcel.generic.RET;
 import org.springframework.stereotype.Service;
 
 import br.com.fiap.anallyzer.javabackend.dto.ClienteRequestDTO;
@@ -49,6 +50,9 @@ public class ClienteService {
       cliente.setNome(clienteRequestDTO.nome());
       cliente.setEmail(clienteRequestDTO.email());
       cliente.setPassword(clienteRequestDTO.password());
+      cliente.setEscolaridade(clienteRequestDTO.escolaridade()); // Atualizando escolaridade
+      cliente.setEstadoCivil(clienteRequestDTO.estadoCivil()); // Atualizando estado civil
+      cliente.setGenero(clienteRequestDTO.genero()); // Atualizando gênero
 
       Cliente clienteAtualizado = clienteRepository.save(cliente);
       return toDTO(clienteAtualizado);
@@ -80,5 +84,10 @@ public class ClienteService {
   private ClienteResponseDTO toDTO(Cliente cliente) {
     return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getEscolaridade(),
         cliente.getEstadoCivil(), cliente.getGenero());
+  }
+
+  public ClienteResponseDTO buscarPorId(Long id) {
+    Cliente cliente = clienteRepository.findById(id).get();
+    return toDTO(cliente);
   }
 }

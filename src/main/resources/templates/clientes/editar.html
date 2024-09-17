@@ -14,9 +14,6 @@
     <label for="email">Email:</label>
     <input type="text" id="email" th:field="*{email}" />
     <br />
-    <label for="password">Senha:</label>
-    <input type="password" id="password" th:field="*{password}" />
-    <br />
     <label for="escolaridade">Escolaridade:</label>
     <select id="escolaridade" th:field="*{escolaridade}">
       <option th:each="escolaridade : ${escolaridades}" th:value="${escolaridade}"

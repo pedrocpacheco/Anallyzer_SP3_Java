@@ -1,16 +1,22 @@
 package br.com.fiap.anallyzer.javabackend.controller;
 
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import br.com.fiap.anallyzer.javabackend.dto.ClienteRequestDTO;
 import br.com.fiap.anallyzer.javabackend.dto.ClienteResponseDTO;
+import br.com.fiap.anallyzer.javabackend.dto.EmpresaResponseDTO;
 import br.com.fiap.anallyzer.javabackend.model.Escolaridade;
 import br.com.fiap.anallyzer.javabackend.model.EstadoCivil;
 import br.com.fiap.anallyzer.javabackend.model.Genero;
 import br.com.fiap.anallyzer.javabackend.service.ClienteService;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/clientes")
@@ -29,11 +35,9 @@ public class ClienteViewController {
     return "clientes/listar";
   }
 
-  @GetMapping("/{id}")
+  @GetMapping("/clientes/visualizar/{id}")
   public String visualizarCliente(@PathVariable Long id, Model model) {
-    ClienteResponseDTO cliente = clienteService.listarClientePorId(id);
-    model.addAttribute("cliente", cliente);
-    return "clientes/visualizar";
+    return "visualizar";
   }
 
   @GetMapping("/novo")
@@ -54,6 +58,11 @@ public class ClienteViewController {
   @GetMapping("/editar/{id}")
   public String editarCliente(@PathVariable Long id, Model model) {
     ClienteResponseDTO cliente = clienteService.listarClientePorId(id);
+    if (cliente == null) {
+      System.out.println("Cliente não encontrado para o ID: " + id);
+    } else {
+      System.out.println("Cliente carregado para edição: " + cliente.nome());
+    }
     model.addAttribute("cliente", cliente);
     model.addAttribute("escolaridades", Escolaridade.values());
     model.addAttribute("estadosCivis", EstadoCivil.values());
