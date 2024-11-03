@@ -27,10 +27,15 @@ public class Usuario {
   private Set<Perfil> perfis; // Perfis do usuário
 
   // Construtor padrão
+
   public Usuario(String string, String string2, Set<Perfil> set) {
+    this.username = string;
+    this.password = string2;
+    this.perfis = set;
   }
 
-  // Getters e Setters
+  public Usuario() {
+  }
 
   public Long getId() {
     return id;
